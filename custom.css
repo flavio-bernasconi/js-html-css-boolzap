@@ -1,10 +1,14 @@
 *{
   box-sizing: border-box;
+  margin: 0;
+  font-family: 'Arimo', sans-serif;
+
 }
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
 
 .container{
   width: 1300px;
-  margin: auto;
+  margin: 2% auto;
   height: 90vh;
 }
 .container:after{
@@ -17,11 +21,10 @@ a{
 }
 
 
-
+/* sezione sinistra utenti */
  #barra-utenti{
-   background: rgb(224, 224, 224);
    height: 90vh;
-   width: 30%;
+   width: 33%;
    float: left;
  }
 
@@ -30,6 +33,7 @@ a{
 }
 .mio-profilo{
   display: flex;
+  justify-content: space-between;
   height: 80px;
   background: rgb(204, 204, 204);
   align-items: center;
@@ -46,14 +50,16 @@ a{
 .notifiche{
   display: flex;
   height: 100px;
-  background: rgb(108, 108, 108);
+  background: rgb(176, 213, 235);
   align-items: center;
+}
+.notifiche .immagine{
+  margin-right: 10px;
 }
 .immagine{
   height: 70px;
   width: 70px;
   border-radius: 50%;
-  background: black;
 }
 
 
@@ -72,33 +78,57 @@ a{
 
 
 #lista-utenti{
-  height: calc(90vh - 270px);
+  height: calc(90vh - 260px);
   overflow-x: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #lista-utenti .utente{
   display: flex;
-  background: rgb(207, 207, 207);
+  justify-content: space-around;
+  width: 100%;
+  background: white;
+  height: 100px;
+  transition: .3s;
 }
- #lista-utenti .active{
-  background: rgb(143, 143, 143)
+#lista-utenti .utente:hover{
+  background: rgb(228, 228, 228);
+}
+#lista-utenti .active{
+  background: rgb(176, 176, 176)
+}
+#lista-utenti .active:hover{
+  background: rgb(176, 176, 176)
 }
 .dettagli-utente{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  width: 70%;
+  align-items: flex-start;
+}
+.dettagli-utente div{
   width: 100%;
-  align-items: center;
 }
 .nome{
+  margin:0;
   text-transform: capitalize;
-  font-size: 1.5rem;
-  color: rgb(88, 88, 88);
+  font-size: 1.2rem;
+  color: rgb(48, 48, 48);
+  font-weight: bold;
 }
 
 .messaggio{
   font-size: 15px;
-  color: white;
-  align-self:stretch;
+  color: rgb(121, 121, 121);
+}
+
+.ore{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: gray;
 }
 
 
@@ -106,34 +136,60 @@ a{
 
 
 
-
-
-
-
-#messaggi{
-  background: blue;
+/* sezione dei messaggi */
+.contenitore{
+  position: relative;
   height: 100%;
-  width: 70%;
-  overflow-x: auto;
+  height: 100%;
+  width: 67%;
   position: relative;
   float: left;
   padding-bottom: 70px;
 }
 
-.contenitore{
-  position: relative;
+
+#messaggi{
+  background-image:url("bk.png");
   height: 100%;
+  overflow-x: auto;
+  position: relative;
+  padding: 80px 0 70px 0 ;
+}
+
+#barra-profilo{
+  position: absolute;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background: rgb(171, 218, 94);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  z-index: 2;
+}
+
+.info{
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.info p , .info h3{
+  width: 100%;
+  margin-left: 5px;
+  margin-bottom: 3px;
 }
 
 
 
 #barra{
   position: absolute;
-  bottom: 00px;
-  height: 70px;
-  width: 70%;
-  margin-left: 30%;
-  background: red;
+  bottom: 0;
+  height: 90px;
+  width: 100%;
+  background: rgb(171, 218, 94);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -145,8 +201,8 @@ a{
   height: 40px;
 }
 
-.bottone-invio button{
-  background: black;
+#barra i{
+  font-size: 2rem;
   color: white;
   padding: 10px;
 }
@@ -163,12 +219,12 @@ a{
 
 
 .texto{
-  font-size: 2rem;
+  font-size: 1.2rem;
   min-width: 80px;
+  color: black;
 
 }
 .msg-inviato{
-  color: black;
   margin: 50px 0;
   display: flex;
   justify-content: flex-end;
@@ -176,18 +232,23 @@ a{
 
 
 .msg-risp{
-  color: white;
-  background: green;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
+ .msg-risp p{
+   background: rgb(194, 245, 181)
+ }
 
 .testo-messaggio , .msg-risp p {
   margin:0;
-  padding: 10px 30px;
+  padding: 10px 20px;
+  border-radius: 7px;
 }
 
 .testo-messaggio{
   background: white;
-
+  max-width: 50%;
 }
 
 
