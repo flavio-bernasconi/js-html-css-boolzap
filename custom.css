@@ -3,9 +3,14 @@
 }
 
 .container{
-  display: flex;
   width: 1300px;
   margin: auto;
+  height: 90vh;
+}
+.container:after{
+  content: '';
+  display: table;
+  clear: both;
 }
 a{
   text-decoration: none;
@@ -17,6 +22,7 @@ a{
    background: rgb(224, 224, 224);
    height: 90vh;
    width: 30%;
+   float: left;
  }
 
 .mio-profilo , .utente , .notifiche{
@@ -106,21 +112,27 @@ a{
 
 #messaggi{
   background: blue;
-  height: 90vh;
+  height: 100%;
   width: 70%;
   overflow-x: auto;
   position: relative;
+  float: left;
+  padding-bottom: 70px;
+}
+
+.contenitore{
+  position: relative;
+  height: 100%;
 }
 
 
 
-
-
 #barra{
-  position: fixed;
-  bottom: 50px;
+  position: absolute;
+  bottom: 00px;
   height: 70px;
-  width: 40%;
+  width: 70%;
+  margin-left: 30%;
   background: red;
   display: flex;
   justify-content: space-around;
