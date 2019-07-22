@@ -145,34 +145,38 @@ a{
 
 
 #lista-messaggi{
-}
-.contenitore-msg{
-  display: flex;
-  justify-content: flex-end;
-}
-.contenitore-msg-2{
-  display: flex;
-  justify-content: flex-start;
+  padding: 50px;
 }
 
-.msg-inviato{
-  height: 50px;
-  color: black;
+
+.texto{
   font-size: 2rem;
-  width: 300px;
-  margin-bottom: 50px;
+  min-width: 80px;
+
+}
+.msg-inviato{
+  color: black;
+  margin: 50px 0;
   background: white;
-  display: inline-block;
+  width: 300px;
 }
 
 
 .msg-risp{
-  height: 50px;
   color: white;
-  font-size: 2rem;
-  width: 300px;
   background: green;
 }
+
+.testo-messaggio , .msg-risp p {
+  margin:0;
+  padding: 10px 30px;
+}
+
+
+
+
+
+
 
 #template{
   display: none;
