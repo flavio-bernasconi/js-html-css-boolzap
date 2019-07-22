@@ -146,6 +146,7 @@ a{
 
 #lista-messaggi{
   padding: 50px;
+
 }
 
 
@@ -157,8 +158,8 @@ a{
 .msg-inviato{
   color: black;
   margin: 50px 0;
-  background: white;
-  width: 300px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 
@@ -172,7 +173,10 @@ a{
   padding: 10px 30px;
 }
 
+.testo-messaggio{
+  background: white;
 
+}
 
 
 
