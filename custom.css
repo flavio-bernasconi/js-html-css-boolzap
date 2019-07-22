@@ -1,0 +1,195 @@
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  width: 1300px;
+  margin: auto;
+}
+a{
+  text-decoration: none;
+}
+
+
+
+ #barra-utenti{
+   background: rgb(224, 224, 224);
+   height: 90vh;
+   width: 30%;
+ }
+
+.mio-profilo , .utente , .notifiche{
+  padding: 15px;
+}
+.mio-profilo{
+  display: flex;
+  height: 80px;
+  background: rgb(204, 204, 204);
+  align-items: center;
+}
+.immagine-small{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: black;
+  margin-right: 10px;
+}
+
+
+.notifiche{
+  display: flex;
+  height: 100px;
+  background: rgb(108, 108, 108);
+  align-items: center;
+}
+.immagine{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background: black;
+}
+
+
+
+#search{
+  height: 40px;
+  width: 90%;
+  margin: auto;
+  margin: 20px 0;
+  margin-left: 15px;
+}
+
+
+
+
+
+
+#lista-utenti{
+  height: calc(90vh - 270px);
+  overflow-x: auto;
+}
+
+#lista-utenti .utente{
+  display: flex;
+  background: rgb(207, 207, 207);
+}
+ #lista-utenti .active{
+  background: rgb(143, 143, 143)
+}
+.dettagli-utente{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.nome{
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: rgb(88, 88, 88);
+}
+
+.messaggio{
+  font-size: 15px;
+  color: white;
+  align-self:stretch;
+}
+
+
+
+
+
+
+
+
+
+
+#messaggi{
+  background: blue;
+  height: 90vh;
+  width: 70%;
+  overflow-x: auto;
+  position: relative;
+}
+
+
+
+
+
+#barra{
+  position: fixed;
+  bottom: 50px;
+  height: 70px;
+  width: 40%;
+  background: red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 30px;
+}
+#barra input{
+  width: 80%;
+  margin: auto;
+  height: 40px;
+}
+
+.bottone-invio button{
+  background: black;
+  color: white;
+  padding: 10px;
+}
+
+
+
+
+
+
+#lista-messaggi{
+}
+.contenitore-msg{
+  display: flex;
+  justify-content: flex-end;
+}
+.contenitore-msg-2{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.msg-inviato{
+  height: 50px;
+  color: black;
+  font-size: 2rem;
+  width: 300px;
+  margin-bottom: 50px;
+  background: white;
+  display: inline-block;
+}
+
+
+.msg-risp{
+  height: 50px;
+  color: white;
+  font-size: 2rem;
+  width: 300px;
+  background: green;
+}
+
+#template{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  */
