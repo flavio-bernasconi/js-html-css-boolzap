@@ -111,56 +111,64 @@ var nome;
 var maiu = "";
 var contatto = '';
 var splttata = '';
+var cerca = $('#search').val();
+
+if (cerca === "") {
+  console.log("valore del cerca non ceee");
+
+}
 
   $('#search').keydown(function(e){
 
     var tasto = e.which;
     // da 65 a 90
-    var inputValue = e.which;
-    console.log(inputValue);
-       if(!(inputValue >= 65 && inputValue <= 120 || inputValue == 8) && (inputValue != 32 && inputValue != 0)){
-           e.preventDefault();
+    console.log(tasto);
+       if(
+               !(tasto >= 65 && tasto <= 120 || tasto == 8) && (tasto != 32 && tasto != 0)){
+                e.preventDefault();
        }
+
        else {
-
-
+                //converto il tasto nella corrispndente lettera
                var res = String.fromCharCode(tasto);
+               //concateno le lettere per creare la stringa da cercare
                stringa = stringa + res;
                console.log("valore stringa",stringa);
 
+               //se il tasto é canc togli al valore di stringa 2 valori
+               // 2 valore perché l ultimo carattere sara il canc stesso che ho appena premuto
+               //se infatti sottraggo 1 non funziona perche non toglia l ultima lettera
                if (tasto == 8) {
-                 console.log("canc attivo");
                  stringa = stringa.substring(0, stringa.length - 2);
                  console.log("nuovo valore",stringa);
                }
 
 
-               var nomeContatto = $(".utente .nome");
+               var nomeContatto;
                var contatto = $(".utente");
-               contatto.hide();
+               //appena schiaccio qualcosa nell input nascondo tutti gli utenti
+               contatto.hide(100);
 
                contatto.each(function(i) {
+                  //di ogni contatto trovo l elemento con la classe nome
                    var nomeContatto = $(this).find(".nome");
                    // console.log(nomeContatto);
+
+                   //testo contenuto dalla classe nome
                    maiu = $( nomeContatto ).text();
                    nome = maiu.toUpperCase();
                    // console.log("stampo nome",nome);
 
+                   //se il testo contiene i valori di stringa mostrami l utente che ha quel nome
                    if (nome.includes(stringa)) {
-
-                     console.log("stampo utente trovato ",this);
-                     $(this).show();
+                     // console.log("stampo utente trovato ",this);
+                     $(this).fadeIn(100);
 
                    }
                  });
 
 
-
        }
-
-
-
-
 
 
 
