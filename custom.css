@@ -7,9 +7,9 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
 
 .container{
-  width: 1300px;
+  width: 1200px;
   margin: 2% auto;
-  height: 90vh;
+  height: 80vh;
 }
 .container:after{
   content: '';
@@ -23,7 +23,7 @@ a{
 
 /* sezione sinistra utenti */
  #barra-utenti{
-   height: 90vh;
+   height: 70vh;
    width: 33%;
    float: left;
  }
@@ -35,7 +35,7 @@ a{
   display: flex;
   justify-content: space-between;
   height: 80px;
-  background: rgb(204, 204, 204);
+  background: rgb(214, 214, 214);
   align-items: center;
 }
 .immagine-small{
@@ -78,7 +78,7 @@ a{
 
 
 #lista-utenti{
-  height: calc(90vh - 260px);
+  height: calc(80vh - 260px);
   overflow-x: auto;
   display: flex;
   flex-wrap: wrap;
@@ -161,7 +161,7 @@ a{
   top: 0;
   height: 80px;
   width: 100%;
-  background: rgb(171, 218, 94);
+  background: rgb(214, 214, 214);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -189,7 +189,7 @@ a{
   bottom: 0;
   height: 90px;
   width: 100%;
-  background: rgb(171, 218, 94);
+  background: rgb(186, 186, 186);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -207,6 +207,14 @@ a{
   padding: 10px;
 }
 
+.mio-profilo i , #barra-profilo i {
+  font-size: 1.4rem;
+  color: rgb(135, 135, 135);
+  margin: 4px;
+}
+.mio-profilo i:hover , #barra-profilo i:hover , #barra i:hover{
+  cursor: pointer;
+}
 
 
 
@@ -250,6 +258,16 @@ a{
   background: white;
   max-width: 50%;
 }
+
+.orario{
+  font-size: 1rem;
+  align-self: center;
+  margin-left: 10px;
+}
+
+
+
+
 
 
 
