@@ -94,8 +94,6 @@ a{
 #lista-utenti{
   height: calc(80vh - 260px);
   overflow-x: auto;
-  display: flex;
-  flex-wrap: wrap;
 }
 
 #lista-utenti .utente{
