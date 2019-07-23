@@ -110,36 +110,53 @@ var stringa = "";
 var nome;
 var maiu = "";
 var contatto = '';
+var splttata = '';
 
   $('#search').keydown(function(e){
 
     var tasto = e.which;
-    var res = String.fromCharCode(tasto);
-    stringa = stringa + res;
-    // str = stringa.str.toLowerCase();
-    console.log(stringa);
-
-    var nomeContatto = $(".utente .nome");
-    var contatto = $(".utente");
-    contatto.hide();
-
-    contatto.each(function(i) {
-        var nomeContatto = $(this).find(".nome");
-        // console.log(nomeContatto);
-        maiu = $( nomeContatto ).text();
-        nome = maiu.toUpperCase();
-        console.log("stampo nome",nome);
-
-        if (nome.includes(stringa)) {
-          // console.log("NOME TROVATOOOOO",nome);
-          // console.log(nomeContatto);
-          console.log("stampo this ",this);
-          $(this).show();
-
-        }
-      });
+    // da 65 a 90
+    var inputValue = e.which;
+    console.log(inputValue);
+       if(!(inputValue >= 65 && inputValue <= 120 || inputValue == 8) && (inputValue != 32 && inputValue != 0)){
+           e.preventDefault();
+       }
+       else {
 
 
+               var res = String.fromCharCode(tasto);
+               stringa = stringa + res;
+               console.log("valore stringa",stringa);
+
+               if (tasto == 8) {
+                 console.log("canc attivo");
+                 stringa = stringa.substring(0, stringa.length - 2);
+                 console.log("nuovo valore",stringa);
+               }
+
+
+               var nomeContatto = $(".utente .nome");
+               var contatto = $(".utente");
+               contatto.hide();
+
+               contatto.each(function(i) {
+                   var nomeContatto = $(this).find(".nome");
+                   // console.log(nomeContatto);
+                   maiu = $( nomeContatto ).text();
+                   nome = maiu.toUpperCase();
+                   // console.log("stampo nome",nome);
+
+                   if (nome.includes(stringa)) {
+
+                     console.log("stampo utente trovato ",this);
+                     $(this).show();
+
+                   }
+                 });
+
+
+
+       }
 
 
 
