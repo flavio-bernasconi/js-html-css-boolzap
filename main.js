@@ -106,29 +106,36 @@ $( document ).ready(function() {
 
 
 var arr = [];
-var resto = '';
+var stringa = "";
 var nome;
 var maiu = "";
+var contatto = '';
 
   $('#search').keydown(function(e){
 
     var tasto = e.which;
     var res = String.fromCharCode(tasto);
-    resto = resto + res;
-    // str = resto.str.toLowerCase();
-    console.log(resto);
+    stringa = stringa + res;
+    // str = stringa.str.toLowerCase();
+    console.log(stringa);
 
-    var contatto = $(".utente .nome");
+    var nomeContatto = $(".utente .nome");
+    var contatto = $(".utente");
     contatto.hide();
 
-    contatto.each(function() {
-        maiu = $( this ).text();
+    contatto.each(function(i) {
+        var nomeContatto = $(this).find(".nome");
+        // console.log(nomeContatto);
+        maiu = $( nomeContatto ).text();
         nome = maiu.toUpperCase();
-        console.log(maiu);
+        console.log("stampo nome",nome);
 
-        if (nome.includes(resto)) {
-          console.log("NOME TROVATOOOOO",nome);
-          contatto.show();
+        if (nome.includes(stringa)) {
+          // console.log("NOME TROVATOOOOO",nome);
+          // console.log(nomeContatto);
+          console.log("stampo this ",this);
+          $(this).show();
+
         }
       });
 
