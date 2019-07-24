@@ -1,57 +1,67 @@
 $( document ).ready(function() {
 
+  var utenteCorrente = "";
+  var classe = "";
+  var m = "";
+
+
   function invio(){
-     var inputval = $("#valmsg").val();
+     var inputval = $(".contenitore.active #valmsg").val();
+     console.log("valore input",inputval);
 
      if (inputval != "") {
        //per scrivere l orario
-         function addZero(i) {
-           if (i < 10) {
-             i = "0" + i;
-           }
-           return i;
-         }
-
-         var d = new Date();
-         var h = addZero(d.getHours());
-         var m = addZero(d.getMinutes());
+         // function addZero(i) {
+         //   if (i < 10) {
+         //     i = "0" + i;
+         //   }
+         //   return i;
+         // }
+         //
+         // var d = new Date();
+         // var h = addZero(d.getHours());
+         // var m = addZero(d.getMinutes());
 
          //clono il figlio del contenitore
          var inviato = $("#template .msg-inviato").clone();
          var figlio = inviato.children(".testo-messaggio");
 
-         var ore = inviato.children(".orario");
-         ore.text(h + " " +  m);
+         // var ore = inviato.children(".orario");
+         // ore.text(h + " " +  m);
 
          //scrivo il messaggio preso da input
          figlio.text(inputval);
          //stampo il clone con l input e l orario
-         $("#lista-messaggi").append(inviato);
+         $(".contenitore.active #lista-messaggi").append(inviato);
 
          //pulisco l'input alla fine
-         $("#valmsg").val("");
+         $(".contenitore.active #valmsg").val("");
 
          setTimeout(function(){
            var risp = $("#template .msg-risp").clone();
-           $("#lista-messaggi").append(risp);
+           $(".contenitore.active #lista-messaggi").append(risp);
          },1000);
      }
      else {
-       console.log("vuotoooo");
+       console.log("input vuoto");
      }
   }
 
   //ruchiamo le funzioni sia qando clicco che con invio
-  $("#send").click(
-    invio
-  );
+// ".contenitore."+nomeContatto
 
-  $('#valmsg').keypress(function(e){
-      if(e.keyCode == 13)
-      {
-        invio();
-      }
-  });
+
+  // $(".contenitore.active #send").click(
+  //     invio
+  //
+  // );
+  //
+  // $('#valmsg').keypress(function(e){
+  //     if(e.keyCode == 13)
+  //     {
+  //       invio();
+  //     }
+  // });
 
 
 
@@ -117,9 +127,6 @@ if (cerca === "") {
        }
 
 
-
-
-
     });
 
 
@@ -128,21 +135,25 @@ if (cerca === "") {
     $(".utente").click(
       function(){
         var nomeContatto = $(this).find(".nome").text().toLowerCase();
-        console.log(nomeContatto);
+        console.log("utente corrente : ",nomeContatto);
         $(".utente").removeClass("active");
+
+
         $(this).addClass("active");
-        //questo utente ha il nome della classe usa this
+
         $(".contenitore").removeClass("active");
 
-        var conte = $(".contenitore").hasClass("foust");
-        console.log(conte);
-        $(".contenitore.foust").addClass("active");
-        // if (conte) {
-        //   $(".contenitore.nomeContatto").addClass("active");
-        // }
-        // else {
-        //   console.log("non va");
-        // }
+        var conte = $(".contenitore").hasClass("nomeContatto");
+        var contCorrente = $(".contenitore."+nomeContatto).addClass("active");
+
+        var lui = contCorrente.find("#send");
+        $(lui).click(
+            invio
+
+        );
+        // var utenteCorrente = $(".contenitore.active").find(".nome").text();
+        // var classe = "." + nomeContatto;
+        // console.log(classe);
 
 
       }
