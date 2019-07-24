@@ -151,9 +151,15 @@ if (cerca === "") {
             invio
 
         );
-        // var utenteCorrente = $(".contenitore.active").find(".nome").text();
-        // var classe = "." + nomeContatto;
-        // console.log(classe);
+
+        var eccolo = contCorrente.find("#valmsg");
+        $(eccolo).keypress(function(e){
+            if(e.keyCode == 13)
+            {
+              invio();
+            }
+        });
+
 
 
       }
