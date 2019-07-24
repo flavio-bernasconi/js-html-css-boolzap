@@ -47,25 +47,6 @@ $( document ).ready(function() {
      }
   }
 
-  //ruchiamo le funzioni sia qando clicco che con invio
-// ".contenitore."+nomeContatto
-
-
-  // $(".contenitore.active #send").click(
-  //     invio
-  //
-  // );
-  //
-  // $('#valmsg').keypress(function(e){
-  //     if(e.keyCode == 13)
-  //     {
-  //       invio();
-  //     }
-  // });
-
-
-
-
 
 var stringa = "";
 var nome;
@@ -77,6 +58,7 @@ if (cerca === "") {
   console.log("valore del cerca non ceee");
 }
 
+  //usa il valore di input non i tasti inseriti
   $('#search').keydown(function(e){
 
     var tasto = e.which;
@@ -136,13 +118,15 @@ if (cerca === "") {
         var nomeContatto = $(this).find(".nome").text().toLowerCase();
         console.log("utente corrente : ",nomeContatto);
         $(".utente").removeClass("active");
-
-
+        //aggiungo all utente su cui ho cliccato active
         $(this).addClass("active");
 
+
+        //rimuovo a tutti i contenitori
         $(".contenitore").removeClass("active");
 
-        var conte = $(".contenitore").hasClass("nomeContatto");
+        //contenitore classe  nome contatto
+        // var conte = $(".contenitore").hasClass("nomeContatto");
         var contCorrente = $(".contenitore."+nomeContatto).addClass("active");
 
 
@@ -174,7 +158,8 @@ if (cerca === "") {
     // });
 
 
-    //
+    //funziona ma il drop si apre se clicco sul messaggio
+    //non sul bottone e basta
     $( "body" ).on( "click", '.active .msg-inviato' , function() {
       $(this).find(".rela").toggle();
       //salvo il this quando è il messaggio selezionato
@@ -189,6 +174,44 @@ if (cerca === "") {
 
     });
 
+
+
+    // $( "body" ).on( "click", '.drop' , function() {
+    //   // $(".rela").removeClass("qui");
+    //   $(".drop").not(this).find(".rela").removeClass("qui");
+    //   $(this).find(".rela").toggleClass("qui");
+    //
+    //
+    //   //salvo il this quando è il messaggio selezionato
+    //
+    //
+    //   $(".nascondilo").click(
+    //     function(){
+    //
+    //         $("msg-inviato").find(".rela.qui").hide();
+    //         console.log("clickkkkato");
+    //     }
+    //   )
+    //
+    // });
+
+
+
+
+
+    $( "body" ).on( "mouseenter", '.msg-inviato' , function() {
+        $(this).find(".orario , .drop").show(200);
+
+    });
+    $( "body" ).on( "mouseleave", '.msg-inviato' , function() {
+      setTimeout(function(){
+        $(this).find(".orario , .drop").hide(200);
+        $(".rela").hide();
+       }, 3000);
+
+
+
+    });
 
 
 

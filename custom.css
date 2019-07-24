@@ -279,6 +279,7 @@ a{
   font-size: 1rem;
   align-self: center;
   margin-left: 10px;
+  /* display: none; */
 }
 
 
@@ -287,6 +288,7 @@ a{
   height: 8px;
   border-radius: 50%;
   background: red;
+  /* display: none; */
 }
 .drop:hover{
   cursor: pointer;
@@ -297,15 +299,20 @@ a{
 }
 .drop .abs {
   position: absolute;
-  top: 45px;
-  left: -160px;
-  background: black;
-  padding: 15px;
+  bottom: 0;
+  left: -92px;
+  background: white;
+  padding: 10px;
+  transform: translate(-50% , 8%);
 }
 .drop .abs a{
-  color: white;
+  color: black;
+  font-size: 15px;
+  text-transform: capitalize;
 }
-
+.qui{
+  display: block!important;
+}
 
 
 
