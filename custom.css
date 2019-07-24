@@ -157,8 +157,11 @@ a{
   position: relative;
   float: left;
   padding-bottom: 70px;
+  display: none;
 }
-
+.contenitore.active{
+  display: block;
+}
 
 #messaggi{
   background-image:url("bk.png");
