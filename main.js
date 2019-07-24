@@ -134,14 +134,15 @@ if (cerca === "") {
         //questo utente ha il nome della classe usa this
         $(".contenitore").removeClass("active");
 
-        var conte = $(".contenitore").hasClass("nomeContatto");
+        var conte = $(".contenitore").hasClass("foust");
         console.log(conte);
-        if (conte) {
-          $(".contenitore.nomeContatto").addClass("active");
-        }
-        else {
-          console.log("non va");
-        }
+        $(".contenitore.foust").addClass("active");
+        // if (conte) {
+        //   $(".contenitore.nomeContatto").addClass("active");
+        // }
+        // else {
+        //   console.log("non va");
+        // }
 
 
       }
