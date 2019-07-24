@@ -146,8 +146,6 @@ a{
 
 
 
-
-
 /* sezione dei messaggi */
 .contenitore{
   position: relative;
@@ -161,6 +159,9 @@ a{
 }
 .contenitore.active{
   display: block;
+}
+.no-pad{
+  padding-bottom: 0px;
 }
 
 #messaggi{
@@ -281,9 +282,29 @@ a{
 }
 
 
-
-
-
+.drop{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: red;
+}
+.drop:hover{
+  cursor: pointer;
+}
+.drop .rela {
+  display: none;
+  position: relative;
+}
+.drop .abs {
+  position: absolute;
+  top: 45px;
+  left: -160px;
+  background: black;
+  padding: 15px;
+}
+.drop .abs a{
+  color: white;
+}
 
 
 

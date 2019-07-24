@@ -11,23 +11,23 @@ $( document ).ready(function() {
 
      if (inputval != "") {
        //per scrivere l orario
-         // function addZero(i) {
-         //   if (i < 10) {
-         //     i = "0" + i;
-         //   }
-         //   return i;
-         // }
-         //
-         // var d = new Date();
-         // var h = addZero(d.getHours());
-         // var m = addZero(d.getMinutes());
+         function addZero(i) {
+           if (i < 10) {
+             i = "0" + i;
+           }
+           return i;
+         }
+
+         var d = new Date();
+         var h = addZero(d.getHours());
+         var m = addZero(d.getMinutes());
 
          //clono il figlio del contenitore
          var inviato = $("#template .msg-inviato").clone();
          var figlio = inviato.children(".testo-messaggio");
 
-         // var ore = inviato.children(".orario");
-         // ore.text(h + " " +  m);
+         var ore = inviato.children(".orario");
+         ore.text(h + " " +  m);
 
          //scrivo il messaggio preso da input
          figlio.text(inputval);
@@ -131,7 +131,6 @@ if (cerca === "") {
 
 
 
-
     $(".utente").click(
       function(){
         var nomeContatto = $(this).find(".nome").text().toLowerCase();
@@ -145,6 +144,7 @@ if (cerca === "") {
 
         var conte = $(".contenitore").hasClass("nomeContatto");
         var contCorrente = $(".contenitore."+nomeContatto).addClass("active");
+
 
         var lui = contCorrente.find("#send");
         $(lui).click(
@@ -169,15 +169,25 @@ if (cerca === "") {
 
 
 
+    // $( "body" ).on( "click", '.active .msg-inviato' , function() {
+    //   $(this).hide();
+    // });
 
 
+    //
+    $( "body" ).on( "click", '.active .msg-inviato' , function() {
+      $(this).find(".rela").toggle();
+      //salvo il this quando è il messaggio selezionato
+      var mex = $(this);
 
+      $(".nascondilo").click(
+        function(){
+          //richiamo mex che è il this equivalente al messaggio
+            $(mex).hide();
+        }
+      )
 
-
-
-
-
-
+    });
 
 
 
