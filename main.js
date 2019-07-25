@@ -3,6 +3,7 @@ $( document ).ready(function() {
   var utenteCorrente = "";
   var classe = "";
   var m = "";
+  var inputval = $(".contenitore.active #valmsg").val();
 
 
   function invio(){
@@ -26,8 +27,21 @@ $( document ).ready(function() {
          var inviato = $("#template .msg-inviato").clone();
          var figlio = inviato.children(".testo-messaggio");
 
+         function scriviOra(e){
+           e.text(h + " " +  m);
+         }
+
          var ore = inviato.children(".orario");
-         ore.text(h + " " +  m);
+         var oraUtente = $(".utente.active .dettagli-utente .ore .oraAttuale");
+         var oreHeader = $(".contenitore.active .inserisci p span");
+
+         scriviOra(ore);
+         scriviOra(oraUtente);
+         scriviOra(oreHeader);
+
+
+         var lastmex = $(".utente.active .messaggio");
+         lastmex.text(inputval);
 
          //scrivo il messaggio preso da input
          figlio.text(inputval);
@@ -41,10 +55,16 @@ $( document ).ready(function() {
            var risp = $("#template .msg-risp").clone();
            $(".contenitore.active #lista-messaggi").append(risp);
          },1000);
+
+         $(".staScrivendo").text("");
+
      }
      else {
        console.log("input vuoto");
      }
+
+
+
   }
 
 
@@ -121,54 +141,39 @@ if (cerca === "") {
         //aggiungo all utente su cui ho cliccato active
         $(this).addClass("active");
 
-
         //rimuovo a tutti i contenitori
         $(".contenitore").removeClass("active");
 
         //contenitore classe  nome contatto
         // var conte = $(".contenitore").hasClass("nomeContatto");
-        var contCorrente = $(".contenitore."+nomeContatto).addClass("active");
+        var contCorrente = $(".contenitore." + nomeContatto).addClass("active");
 
-
-        var lui = contCorrente.find("#send");
-        $(lui).click(
+        var chatta = contCorrente.find("#send");
+        $(chatta).click(
             invio
-
         );
 
-        var eccolo = contCorrente.find("#valmsg");
-        $(eccolo).keypress(function(e){
+        var tastoInvio = contCorrente.find("#valmsg");
+        $(tastoInvio).keypress(function(e){
             if(e.keyCode == 13)
             {
               invio();
             }
         });
-
-
-
       }
     )
 
 
 
-
-
-    // $( "body" ).on( "click", '.active .msg-inviato' , function() {
-    //   $(this).hide();
-    // });
-
-
     //funziona ma il drop si apre se clicco sul messaggio
     //non sul bottone e basta
-    $( "body" ).on( "click", '.active .msg-inviato' , function() {
+    $( "body" ).on( "click", '.active .msg-inviato .drop' , function() {
       $(this).find(".rela").toggle();
-      //salvo il this quando è il messaggio selezionato
       var mex = $(this);
 
       $(".nascondilo").click(
         function(){
-          //richiamo mex che è il this equivalente al messaggio
-            $(mex).hide();
+            mex.parent().hide();
         }
       )
 
@@ -176,44 +181,35 @@ if (cerca === "") {
 
 
 
-    // $( "body" ).on( "click", '.drop' , function() {
-    //   // $(".rela").removeClass("qui");
-    //   $(".drop").not(this).find(".rela").removeClass("qui");
-    //   $(this).find(".rela").toggleClass("qui");
-    //
-    //
-    //   //salvo il this quando è il messaggio selezionato
-    //
-    //
-    //   $(".nascondilo").click(
-    //     function(){
-    //
-    //         $("msg-inviato").find(".rela.qui").hide();
-    //         console.log("clickkkkato");
-    //     }
-    //   )
-    //
-    // });
+    $("#valmsg").focus(
+      function(){
+        $(".mic").hide();
+        $(".plane").show();
+      }
+    )
+
+    $("#valmsg").focusout(
+      function(){
+        $(".mic").show();
+        $(".plane").hide();
+        $(".animato").hide();
+      }
+    )
 
 
 
-
-
-    $( "body" ).on( "mouseenter", '.msg-inviato' , function() {
-        $(this).find(".orario , .drop").show(200);
-
-    });
-    $( "body" ).on( "mouseleave", '.msg-inviato' , function() {
-      setTimeout(function(){
-        $(this).find(".orario , .drop").hide(200);
-        $(".rela").hide();
-       }, 3000);
-
-
-
-    });
-
-
+    //non lo ri-fà dopo che l ho inviato
+    $('#valmsg').keypress(function(){
+      // console.log("sta scrivendo");
+      var test = console.log("ok");
+      if (test = "ok") {
+        // $(".staScrivendo").text("Stai scrivendo ...");
+        $(".animato").show();
+      }
+      else {
+        $(".animato").hide();
+      }
+    })
 
 
 
