@@ -56,8 +56,10 @@ a{
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  background: black;
   margin-right: 10px;
+  /* background-image: url('baffo.png'); */
+  background-size: cover;
+
 }
 
 
@@ -346,6 +348,9 @@ a{
   position: relative;
 }
 
+.inserisci h3::first-letter{
+  text-transform: uppercase;
+}
 
 
 

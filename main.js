@@ -135,6 +135,7 @@ if (cerca === "") {
                }
              });
 
+
        }
 
 
@@ -147,7 +148,7 @@ if (cerca === "") {
         var nomeContatto = $(this).find(".nome").text().toLowerCase();
         console.log("utente corrente : ",nomeContatto);
         $(".utente").removeClass("active");
-        //aggiungo all utente su cui ho cliccato active
+
         $(this).addClass("active");
 
         //rimuovo a tutti i contenitori
@@ -161,6 +162,10 @@ if (cerca === "") {
         $(chatta).click(
             invio
         );
+
+        //aggiungo immagine in base al nome dinamicamente
+        $(".contenitore.active .immagine-small").css('background-image', 'url(' + nomeContatto+ '.png' + ')');
+
 
         var tastoInvio = contCorrente.find("#valmsg");
         $(tastoInvio).keypress(function(e){
