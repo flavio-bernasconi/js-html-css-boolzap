@@ -296,6 +296,8 @@ a{
   right: -20px;
   transform: translate(0%, -50%);
   display: none;
+  width: 100%;
+  height: 100%;
 }
 .drop:hover{
   cursor: pointer;
@@ -306,8 +308,8 @@ a{
 }
 .drop .abs {
   position: absolute;
-  bottom: 14px;
-  left: -52px;
+  top: -2px;
+  right: -26px;
   background: white;
   padding: 10px;
   transform: translate(-56% , -76%);
@@ -317,6 +319,12 @@ a{
   font-size: 15px;
   text-transform: capitalize;
 }
+.drop i{
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
 .qui{
   display: block!important;
 }
