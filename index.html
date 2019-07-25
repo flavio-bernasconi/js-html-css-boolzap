@@ -39,28 +39,28 @@
 
         <div id="lista-utenti" >
 
-          <a class="utente baffo " href="#">
+          <a class="utente " href="#">
             <img src="img.png" class="immagine"></img>
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Baffo</p>
-                <p class="">10:00</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
 
-          <a class="utente foust" href="#">
+          <a class="utente" href="#">
             <img src="img.png" class="immagine"></img>
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Foust</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -70,10 +70,10 @@
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Teo</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -83,10 +83,10 @@
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Turco</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -96,10 +96,10 @@
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Ame</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -109,10 +109,10 @@
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Comin</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -122,10 +122,10 @@
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Valeee</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -135,10 +135,10 @@
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Bea</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -148,10 +148,10 @@
             <div class="dettagli-utente">
               <div class="ore">
                 <p class="nome">Gigi</p>
-                <p class="">13:54</p>
+                <p class="oraAttuale"></p>
               </div>
               <div class="">
-                <p class="messaggio">ciao come stai</p>
+                <p class="messaggio"></p>
               </div>
             </div>
           </a>
@@ -172,179 +172,190 @@
 
       </div>
 
-      <div class="contenitore baffo ">
+      <div class="contenitore baffo " >
         <div id="barra-profilo">
+            <div class="info">
+                <div class="">
+                  <div class="immagine-small"> </div>
+                </div>
+                <div class="inserisci">
+                  <h3>baffo</h3>
+                  <p>ultimo accesso <span></span></p>
+                </div>
+            </div>
+
+            <div class="">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="fa fa-paperclip" aria-hidden="true"></i>
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </div>
+
+        </div>
+
+            <div id="messaggi">
+              <div id="lista-messaggi">
+                <!-- qui incollo i miei messaggi inviati -->
+              </div>
+            </div>
+            <!-- barra dove scrivo e invio il messaggio  -->
+            <div id="barra">
+              <div class="smile">
+                <i class="fa fa-smile-o" aria-hidden="true"></i>
+              </div>
+              <input id="valmsg" placeholder="ciao scrivi" />
+              <div class="bottone-invio">
+                <a id="send">
+                    <i class="fa fa-microphone mic" aria-hidden="true"></i>
+                    <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="staScrivendo">
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="contenitore foust " >
+            <div id="barra-profilo">
+                <div class="info">
+                    <div class="">
+                      <div class="immagine-small"> </div>
+                    </div>
+                    <div class="inserisci">
+                      <h3>foust</h3>
+                      <p>ultimo accesso <span></span></p>
+                    </div>
+                </div>
+
+                <div class="">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  <i class="fa fa-paperclip" aria-hidden="true"></i>
+                  <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                </div>
+
+            </div>
+
+            <div id="messaggi">
+              <div id="lista-messaggi">
+                <!-- qui incollo i miei messaggi inviati -->
+              </div>
+            </div>
+            <!-- barra dove scrivo e invio il messaggio  -->
+            <div id="barra">
+              <div class="smile">
+                <i class="fa fa-smile-o" aria-hidden="true"></i>
+              </div>
+              <input id="valmsg" placeholder="ciao scrivi" />
+              <div class="bottone-invio">
+                <a id="send">
+                    <i class="fa fa-microphone mic" aria-hidden="true"></i>
+                    <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+                  </a>
+              </div>
+              <div class="staScrivendo">
+              </div>
+            </div>
+        </div>
+
+
+        <div class="contenitore teo " >
+          <div id="barra-profilo">
+              <div class="info">
+                  <div class="">
+                    <div class="immagine-small"> </div>
+                  </div>
+                  <div class="inserisci">
+                    <h3>foust</h3>
+                    <p>ultimo accesso <span></span></p>
+                  </div>
+              </div>
+
+              <div class="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="fa fa-paperclip" aria-hidden="true"></i>
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              </div>
+
+          </div>
+
+          <div id="messaggi">
+            <div id="lista-messaggi">
+              <!-- qui incollo i miei messaggi inviati -->
+            </div>
+          </div>
+          <!-- barra dove scrivo e invio il messaggio  -->
+          <div id="barra">
+            <div class="smile">
+              <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </div>
+            <input id="valmsg" placeholder="ciao scrivi" />
+            <div class="bottone-invio">
+              <a id="send">
+                  <i class="fa fa-microphone mic" aria-hidden="true"></i>
+                  <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="staScrivendo">
+            </div>
+          </div>
+      </div>
+
+
+
+      <div class="contenitore turco " >
+        <div id="barra-profilo">
+            <div class="info">
+                <div class="">
+                  <div class="immagine-small"> </div>
+                </div>
+                <div class="inserisci">
+                  <h3>turco</h3>
+                  <p>ultimo accesso <span></span></p>
+                </div>
+            </div>
+
+            <div class="">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <i class="fa fa-paperclip" aria-hidden="true"></i>
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </div>
+
+        </div>
+
+        <div id="messaggi">
+          <div id="lista-messaggi">
+            <!-- qui incollo i miei messaggi inviati -->
+          </div>
+        </div>
+        <!-- barra dove scrivo e invio il messaggio  -->
+        <div id="barra">
+          <div class="smile">
+            <i class="fa fa-smile-o" aria-hidden="true"></i>
+          </div>
+          <input id="valmsg" placeholder="ciao scrivi" />
+          <div class="bottone-invio">
+            <a id="send">
+                <i class="fa fa-microphone mic" aria-hidden="true"></i>
+                <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="staScrivendo">
+          </div>
+        </div>
+    </div>
+
+
+
+    <div class="contenitore ame " >
+      <div id="barra-profilo">
           <div class="info">
               <div class="">
                 <div class="immagine-small"> </div>
               </div>
               <div class="inserisci">
-                <h3>baffo</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
-
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
-
-        </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
-        </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenitore foust">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
-                <h3>faustooooo</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
-
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
-
-        </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
-        </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenitore turco">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
-                <h3>turco</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
-
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
-
-        </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
-        </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenitore teo">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
-                <h3>teo</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
-
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
-
-        </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
-        </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenitore ame">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
                 <h3>ame</h3>
-                <p>ultimo accesso</p>
+                <p>ultimo accesso <span></span></p>
               </div>
           </div>
 
@@ -354,192 +365,221 @@
             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
           </div>
 
-        </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
-        </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
-        </div>
       </div>
 
-      <div class="contenitore comin">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
-                <h3>comin</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
-
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
-
-        </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
-        </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
+      <div id="messaggi">
+        <div id="lista-messaggi">
+          <!-- qui incollo i miei messaggi inviati -->
         </div>
       </div>
-
-      <div class="contenitore valeee">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
-                <h3>valeee</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
-
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
-
+      <!-- barra dove scrivo e invio il messaggio  -->
+      <div id="barra">
+        <div class="smile">
+          <i class="fa fa-smile-o" aria-hidden="true"></i>
         </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
+        <input id="valmsg" placeholder="ciao scrivi" />
+        <div class="bottone-invio">
+          <a id="send">
+              <i class="fa fa-microphone mic" aria-hidden="true"></i>
+              <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+            </a>
         </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
+        <div class="staScrivendo">
         </div>
       </div>
+  </div>
 
-      <div class="contenitore bea">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
-                <h3>bea</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
 
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
 
+
+
+  <div class="contenitore comin " >
+    <div id="barra-profilo">
+        <div class="info">
+            <div class="">
+              <div class="immagine-small"> </div>
+            </div>
+            <div class="inserisci">
+              <h3>comin</h3>
+              <p>ultimo accesso <span></span></p>
+            </div>
         </div>
 
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
+        <div class="">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <i class="fa fa-paperclip" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
         </div>
 
-        <!-- barra dove scrivo e invio il messaggio  -->
+    </div>
 
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
-        </div>
+    <div id="messaggi">
+      <div id="lista-messaggi">
+        <!-- qui incollo i miei messaggi inviati -->
       </div>
-
-      <div class="contenitore gigi">
-        <div id="barra-profilo">
-          <div class="info">
-              <div class="">
-                <div class="immagine-small"> </div>
-              </div>
-              <div class="">
-                <h3>gigi</h3>
-                <p>ultimo accesso</p>
-              </div>
-          </div>
-
-          <div class="">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <i class="fa fa-paperclip" aria-hidden="true"></i>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-          </div>
-
-        </div>
-
-        <div id="messaggi">
-          <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
-          </div>
-        </div>
-
-        <!-- barra dove scrivo e invio il messaggio  -->
-
-        <div id="barra">
-          <div class="smile">
-            <i class="fa fa-smile-o" aria-hidden="true"></i>
-          </div>
-          <input id="valmsg" placeholder="ciao scrivi" />
-          <div class="bottone-invio">
-            <a id="send">
-              <i class="fa fa-paper-plane" aria-hidden="true"></i>
-          </a>
-          </div>
-        </div>
+    </div>
+    <!-- barra dove scrivo e invio il messaggio  -->
+    <div id="barra">
+      <div class="smile">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
       </div>
+      <input id="valmsg" placeholder="ciao scrivi" />
+      <div class="bottone-invio">
+        <a id="send">
+            <i class="fa fa-microphone mic" aria-hidden="true"></i>
+            <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+          </a>
+      </div>
+      <div class="staScrivendo">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="contenitore vale " >
+    <div id="barra-profilo">
+        <div class="info">
+            <div class="">
+              <div class="immagine-small"> </div>
+            </div>
+            <div class="inserisci">
+              <h3>vale</h3>
+              <p>ultimo accesso <span></span></p>
+            </div>
+        </div>
+
+        <div class="">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <i class="fa fa-paperclip" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </div>
+
+    </div>
+
+    <div id="messaggi">
+      <div id="lista-messaggi">
+        <!-- qui incollo i miei messaggi inviati -->
+      </div>
+    </div>
+    <!-- barra dove scrivo e invio il messaggio  -->
+    <div id="barra">
+      <div class="smile">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+      </div>
+      <input id="valmsg" placeholder="ciao scrivi" />
+      <div class="bottone-invio">
+        <a id="send">
+            <i class="fa fa-microphone mic" aria-hidden="true"></i>
+            <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+          </a>
+      </div>
+      <div class="staScrivendo">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="contenitore bea " >
+    <div id="barra-profilo">
+        <div class="info">
+            <div class="">
+              <div class="immagine-small"> </div>
+            </div>
+            <div class="inserisci">
+              <h3>gigi</h3>
+              <p>ultimo accesso <span></span></p>
+            </div>
+        </div>
+
+        <div class="">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <i class="fa fa-paperclip" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </div>
+
+    </div>
+
+    <div id="messaggi">
+      <div id="lista-messaggi">
+        <!-- qui incollo i miei messaggi inviati -->
+      </div>
+    </div>
+    <!-- barra dove scrivo e invio il messaggio  -->
+    <div id="barra">
+      <div class="smile">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+      </div>
+      <input id="valmsg" placeholder="ciao scrivi" />
+      <div class="bottone-invio">
+        <a id="send">
+            <i class="fa fa-microphone mic" aria-hidden="true"></i>
+            <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+          </a>
+      </div>
+      <div class="staScrivendo">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="contenitore gigi " >
+    <div id="barra-profilo">
+        <div class="info">
+            <div class="">
+              <div class="immagine-small"> </div>
+            </div>
+            <div class="inserisci">
+              <h3>gigi</h3>
+              <p>ultimo accesso <span></span></p>
+            </div>
+        </div>
+
+        <div class="">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <i class="fa fa-paperclip" aria-hidden="true"></i>
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </div>
+
+    </div>
+
+    <div id="messaggi">
+      <div id="lista-messaggi">
+        <!-- qui incollo i miei messaggi inviati -->
+      </div>
+    </div>
+    <!-- barra dove scrivo e invio il messaggio  -->
+    <div id="barra">
+      <div class="smile">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+      </div>
+      <input id="valmsg" placeholder="ciao scrivi" />
+      <div class="bottone-invio">
+        <a id="send">
+            <i class="fa fa-microphone mic" aria-hidden="true"></i>
+            <i class="fa fa-paper-plane plane" aria-hidden="true"></i>
+          </a>
+      </div>
+      <div class="staScrivendo">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>
@@ -549,15 +589,16 @@
     <div id="template">
 
         <div class='texto msg-inviato'>
-          <p class="testo-messaggio"></p>
-            <p class="orario"></p>
-            <div class="drop">
-              <div class="rela">
-                <div class="abs">
-                  <a href="#" class="nascondilo">nascondi</a>
+            <p class="testo-messaggio"></p>
+              <p class="orario"></p>
+              <div class="drop">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                <div class="rela">
+                  <div class="abs">
+                    <a href="#" class="nascondilo">nascondi</a>
+                  </div>
                 </div>
               </div>
-            </div>
         </div>
 
 

@@ -39,9 +39,19 @@ $( document ).ready(function() {
          scriviOra(oraUtente);
          scriviOra(oreHeader);
 
-
+         //ultimo messaggio inviato se troppo lungo lo taglio
          var lastmex = $(".utente.active .messaggio");
-         lastmex.text(inputval);
+
+         if (inputval.length > 25) {
+           console.log(inputval.length,"sono la lunghezza dell input");
+           //slice primo valore da dove inizia secondo valore quanti caratteri includere
+           var tronco = inputval.slice(0, 20);
+           lastmex.text(tronco + "....");
+         }
+         else {
+           lastmex.text(inputval);
+         }
+
 
          //scrivo il messaggio preso da input
          figlio.text(inputval);
@@ -125,7 +135,6 @@ if (cerca === "") {
                }
              });
 
-
        }
 
 
@@ -165,51 +174,74 @@ if (cerca === "") {
 
 
 
-    //funziona ma il drop si apre se clicco sul messaggio
-    //non sul bottone e basta
+    //quando sono in hover al messaggio vedo i 3 puntini per poterlo cancellare
     $( "body" ).on( "click", '.active .msg-inviato .drop' , function() {
       $(this).find(".rela").toggle();
       var mex = $(this);
 
-      $(".nascondilo").click(
+      $(".abs").click(
         function(){
             mex.parent().hide();
+            $(".utente.active .messaggio").text("Ultimo messaggio eliminato")
         }
       )
 
     });
 
 
-
-    $("#valmsg").focus(
+    //cambia l icona da mic a plane se clicco dentro l input
+    $(".contenitore #valmsg").focus(
       function(){
         $(".mic").hide();
         $(".plane").show();
       }
     )
 
-    $("#valmsg").focusout(
+    $(".contenitore #valmsg").focusout(
       function(){
         $(".mic").show();
         $(".plane").hide();
-        $(".animato").hide();
       }
     )
 
-
-
-    //non lo ri-fà dopo che l ho inviato
-    $('#valmsg').keypress(function(){
+    //mentre scrivo esce stai scrivendo
+    //?bug se scrivo e cambio finestra mi rimane che sto scrivendo ma se aggiungo
+    //active al selettore non funziona
+    $(".contenitore #valmsg").keypress(function(){
       // console.log("sta scrivendo");
-      var test = console.log("ok");
-      if (test = "ok") {
-        // $(".staScrivendo").text("Stai scrivendo ...");
-        $(".animato").show();
-      }
-      else {
-        $(".animato").hide();
+      var test = console.log("digito");
+      if (test = "digito") {
+        $(".staScrivendo").text("Stai scrivendo ...");
       }
     })
+
+
+
+    $( "body" ).on( "mouseenter", '.active .msg-inviato ' , function() {
+        // $(".drop").removeClass("mostra");
+        $(".drop").not(this).removeClass("mostra");
+        $(this).children(".drop").addClass("mostra");
+
+    });
+
+    function sparisci(){
+      $(".drop").removeClass("mostra");
+    }
+
+    //se vado sul messaggio ok i puntini spariscono ;)
+    $( "body" ).on( "mouseenter", ' .msg-risp ' , function() {
+        sparisci()
+    })
+
+    $(".contenitore").mouseleave(
+      sparisci
+    )
+
+    $("#barra-profilo , #barra").mouseenter(
+      sparisci
+    )
+
+
 
 
 

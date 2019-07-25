@@ -238,7 +238,7 @@ a{
 
 #lista-messaggi{
   padding: 50px;
-
+  overflow-y:auto;
 }
 
 
@@ -250,8 +250,10 @@ a{
 }
 .msg-inviato{
   margin: 50px 0;
+  position: relative;
   display: flex;
   justify-content: flex-end;
+
 }
 
 
@@ -266,29 +268,32 @@ a{
 
 .testo-messaggio , .msg-risp p {
   margin:0;
-  padding: 10px 20px;
+  padding:  20px;
+  padding-bottom: 30px;
   border-radius: 7px;
 }
 
 .testo-messaggio{
   background: white;
-  max-width: 50%;
+  max-width: 330px;
 }
 
 .orario{
-  font-size: 1rem;
-  align-self: center;
-  margin-left: 10px;
+  font-size: 13px;
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
   /* display: none; */
 }
 
 
 .drop{
-  width: 8px;
-  height: 8px;
   border-radius: 50%;
-  background: red;
-  /* display: none; */
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translate(0%, -50%);
+  display: none;
 }
 .drop:hover{
   cursor: pointer;
@@ -299,11 +304,11 @@ a{
 }
 .drop .abs {
   position: absolute;
-  bottom: 0;
-  left: -92px;
+  bottom: 14px;
+  left: -52px;
   background: white;
   padding: 10px;
-  transform: translate(-50% , 8%);
+  transform: translate(-56% , -76%);
 }
 .drop .abs a{
   color: black;
@@ -314,10 +319,31 @@ a{
   display: block!important;
 }
 
+.nascondilo{
+  display: block;
+}
+
+#send .plane{
+  display: none
+}
 
 
-#template{
-  display: none;
+.staScrivendo{
+  position: absolute;
+  top: -22px;
+  left: 93px;
+}
+.staScrivendo p{
+  display: inline;
+}
+
+
+.mostra{
+  display: block;
+}
+
+.relativo{
+  position: relative;
 }
 
 
@@ -326,12 +352,9 @@ a{
 
 
 
-
-
-
-
-
-
+#template{
+  display: none;
+}
 
 
   /*  */
