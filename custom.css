@@ -278,6 +278,12 @@ a{
 .testo-messaggio{
   background: white;
   max-width: 330px;
+  line-height: 1.7rem;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+
 }
 
 .orario{

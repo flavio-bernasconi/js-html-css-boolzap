@@ -26,6 +26,7 @@ $( document ).ready(function() {
          //clono il figlio del contenitore
          var inviato = $("#template .msg-inviato").clone();
          var figlio = inviato.children(".testo-messaggio");
+         
 
          function scriviOra(e){
            e.text(h + " " +  m);
