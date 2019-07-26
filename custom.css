@@ -238,9 +238,8 @@ a{
 
 
 
-#lista-messaggi{
+.lista-messaggi{
   padding: 50px;
-  overflow-y:auto;
 }
 
 
@@ -369,11 +368,93 @@ a{
 
 
 
-
-
 #template{
   display: none;
 }
+
+
+@media (max-width: 575.98px) {
+  body{
+      background: red;
+    }
+    .dettagli-utente {
+    margin-left: 14px;
+    }
+    .immagine {
+    height: 50px;
+    width: 50px;
+  }
+  .info {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .notifiche {
+    justify-content: center;
+  }
+  .notifiche p , .notifiche a{
+    display: none;
+  }
+  #barra-profilo .fa-search , #barra-profilo .fa-paperclip , .mio-profilo .fa-spinner , .mio-profilo  .fa-comment{
+    display: none;
+  }
+  #barra-utenti {
+    height: 70vh;
+    width: 100%;
+  }
+  .contenitore{
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  body{
+      background: blue;
+    }
+    .dettagli-utente {
+    margin-left: 14px;
+    }
+    .immagine {
+    height: 50px;
+    width: 50px;
+  }
+  .info {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .notifiche {
+    justify-content: center;
+  }
+  .notifiche p , .notifiche a{
+    display: none;
+  }
+  #barra-profilo .fa-search , #barra-profilo .fa-paperclip , .mio-profilo .fa-spinner , .mio-profilo  .fa-comment{
+    display: none;
+  }
+  #barra-utenti {
+    height: 70vh;
+    width: 100%;
+  }
+  .contenitore{
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+@media (min-width: 1200px) {  }
+
+
+
+
+
 
 
   /*  */

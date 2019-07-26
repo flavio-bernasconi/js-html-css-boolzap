@@ -1,10 +1,14 @@
 $( document ).ready(function() {
 
+
+
   var utenteCorrente = "";
   var classe = "";
   var m = "";
   var inputval = $(".contenitore.active #valmsg").val();
 
+  //scrolla infondo agli utenti
+  // $("#lista-utenti").scrollTop($("#lista-utenti")[0].scrollHeight);
 
 
   function invio(){
@@ -62,7 +66,7 @@ $( document ).ready(function() {
 
       var html = template(daInserire);
 
-      $(".active #lista-messaggi").append(html);
+      $(".active .lista-messaggi").append(html);
 
 
        setTimeout(function(){
@@ -75,8 +79,10 @@ $( document ).ready(function() {
 
       var html = template(daInserire);
 
-      $(".active #lista-messaggi").append(html);
+      $(".active .lista-messaggi").append(html);
       },500)
+
+
 
       //pulisco l input
       $(".active #valmsg").val("");
@@ -160,6 +166,9 @@ if (cerca === "") {
     //utente attivo
     $(".utente").click(
       function(){
+        //scrolla bottom chat messaggi
+        // $(".active .lista-messaggi").scrollTop($('.active .lista-messaggi')[0].scrollHeight)
+
         $(".staScrivendo").text("");
 
         var nomeContatto = $(this).find(".nome").text().toLowerCase();
@@ -193,6 +202,16 @@ if (cerca === "") {
             if(e.keyCode == 13)
             {
               invio();
+              //scrolla bottom chat messaggi test due fallito
+              // var height = $('.active .lista-messaggi')[0].scrollHeight;
+              // console.log("altezza div messaggi ",height);
+              // $(".active .lista-messaggi").scrollTop(height);
+
+
+
+
+
+
             }
         });
       }
@@ -269,8 +288,37 @@ if (cerca === "") {
     )
 
 
-    $('#send').click(false);
 
+
+    $(window).on('resize', function(){
+      var win = $(this); //this = window
+      if (win.width() <= 780) {
+        $(".contenitore ").removeClass("active");
+        $("body").css("background","green");
+        $("#barra-utenti").css("height","100vh");
+        $("#lista-utenti").css("height","100%");
+        
+
+        $(".utente").click(
+            function(){
+              $("#lista-utenti").hide();
+              $("#barra-utenti").css("height","30vh");
+            }
+          )
+
+
+          $(".immagine-small").click(
+              function(){
+                $("#lista-utenti").show();
+                $("#barra-utenti").css("height","100vh");
+                $(".contenitore ").toggleClass("active");
+              }
+            )
+       }
+       else {
+         console.log("allargamento");
+       }
+});
 
 
 });
