@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   </head>
@@ -166,7 +168,6 @@
 
         <div id="messaggi">
           <div id="lista-messaggi">
-            <!-- qui incollo i miei messaggi inviati -->
           </div>
         </div>
 
@@ -415,7 +416,7 @@
     </div>
 
     <div id="messaggi">
-      <div id="lista-messaggi">
+      <div class="lista-messaggi" id="lista-messaggi">
         <!-- qui incollo i miei messaggi inviati -->
       </div>
     </div>
@@ -587,29 +588,28 @@
 
 
 
-    <div id="template">
+    
 
-        <div class='texto msg-inviato'>
-            <p class="testo-messaggio"></p>
-              <p class="orario"></p>
-              <div class="drop">
-                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                <div class="rela">
-                  <div class="abs">
-                    <a href="#" class="nascondilo">nascondi</a>
-                  </div>
+    <script id="msgtemplate" type="text/x-handlebars-template">
+      <div class='texto {{classeAggiunta}}'>
+          <p class="testo-messaggio">{{textMessaggio}}</p>
+            <p class="orario">{{time}}</p>
+            <div class="drop">
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <div class="rela">
+                <div class="abs">
+                  <a href="#" class="nascondilo">nascondi</a>
                 </div>
               </div>
-        </div>
+            </div>
+      </div>
+    </script>
 
-
-        <div class='texto msg-risp'>
-          <p>ok</p>
-        </div>
-
-
-    </div>
-
+    <script id="risptemplate" type="text/x-handlebars-template">
+      <div class='texto {{classeAggiunta}}'>
+          <p class="testo-messaggio">{{textMessaggio}}</p>
+      </div>
+    </script>
 
 
 

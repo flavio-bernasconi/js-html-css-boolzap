@@ -6,73 +6,87 @@ $( document ).ready(function() {
   var inputval = $(".contenitore.active #valmsg").val();
 
 
+
   function invio(){
+    $(".staScrivendo").text("");
+
      var inputval = $(".contenitore.active #valmsg").val();
      console.log("valore input",inputval);
 
+
      if (inputval != "") {
        //per scrivere l orario
-         function addZero(i) {
-           if (i < 10) {
-             i = "0" + i;
-           }
-           return i;
+       function addZero(i) {
+         if (i < 10) {
+           i = "0" + i;
          }
+         return i;
+       }
 
-         var d = new Date();
-         var h = addZero(d.getHours());
-         var m = addZero(d.getMinutes());
+       var d = new Date();
+       var h = addZero(d.getHours());
+       var m = addZero(d.getMinutes());
 
-         //clono il figlio del contenitore
-         var inviato = $("#template .msg-inviato").clone();
-         var figlio = inviato.children(".testo-messaggio");
-         
+       var tempo = h + " " +  m;
 
-         function scriviOra(e){
-           e.text(h + " " +  m);
-         }
+       function scriviOra(e){
+         e.text(h + " " +  m);
+       }
 
-         var ore = inviato.children(".orario");
-         var oraUtente = $(".utente.active .dettagli-utente .ore .oraAttuale");
-         var oreHeader = $(".contenitore.active .inserisci p span");
+       var oraUtente = $(".utente.active .dettagli-utente .ore .oraAttuale");
+       var oreHeader = $(".contenitore.active .inserisci p span");
 
-         scriviOra(ore);
-         scriviOra(oraUtente);
-         scriviOra(oreHeader);
+       scriviOra(oraUtente);
+       scriviOra(oreHeader);
 
-         //ultimo messaggio inviato se troppo lungo lo taglio
-         var lastmex = $(".utente.active .messaggio");
+       //ultimo messaggio inviato se troppo lungo lo taglio
+       var lastmex = $(".utente.active .messaggio");
 
-         if (inputval.length > 25) {
-           console.log(inputval.length,"sono la lunghezza dell input");
-           //slice primo valore da dove inizia secondo valore quanti caratteri includere
-           var tronco = inputval.slice(0, 20);
-           lastmex.text(tronco + "....");
-         }
-         else {
-           lastmex.text(inputval);
-         }
+       if (inputval.length > 25) {
+         console.log(inputval.length,"sono la lunghezza dell input");
+         //slice primo valore da dove inizia secondo valore quanti caratteri includere
+         var tronco = inputval.slice(0, 20);
+         lastmex.text(tronco + "....");
+       }
+       else {
+         lastmex.text(inputval);
+       }
+
+      //template handelbars
+      var sorgenteCodice = $("#msgtemplate").html();
+      console.log(sorgenteCodice);
+
+      var template = Handlebars.compile(sorgenteCodice);
+
+      var daInserire = { textMessaggio: inputval, time: tempo, classeAggiunta:"msg-inviato"  };
+
+      var html = template(daInserire);
+
+      $(".active #lista-messaggi").append(html);
 
 
-         //scrivo il messaggio preso da input
-         figlio.text(inputval);
-         //stampo il clone con l input e l orario
-         $(".contenitore.active #lista-messaggi").append(inviato);
+       setTimeout(function(){
+      var sorgenteCodice = $("#risptemplate").html();
+      console.log(sorgenteCodice);
 
-         //pulisco l'input alla fine
-         $(".contenitore.active #valmsg").val("");
+      var template = Handlebars.compile(sorgenteCodice);
 
-         setTimeout(function(){
-           var risp = $("#template .msg-risp").clone();
-           $(".contenitore.active #lista-messaggi").append(risp);
-         },1000);
+      var daInserire = { textMessaggio: "oook",  classeAggiunta: "msg-risp"  };
 
-         $(".staScrivendo").text("");
+      var html = template(daInserire);
+
+      $(".active #lista-messaggi").append(html);
+      },500)
+
+      //pulisco l input
+      $(".active #valmsg").val("");
 
      }
+
      else {
        console.log("input vuoto");
      }
+
 
 
 
@@ -143,14 +157,18 @@ if (cerca === "") {
     });
 
 
-
+    //utente attivo
     $(".utente").click(
       function(){
+        $(".staScrivendo").text("");
+
         var nomeContatto = $(this).find(".nome").text().toLowerCase();
         console.log("utente corrente : ",nomeContatto);
         $(".utente").removeClass("active");
 
         $(this).addClass("active");
+
+
 
         //rimuovo a tutti i contenitori
         $(".contenitore").removeClass("active");
@@ -159,7 +177,9 @@ if (cerca === "") {
         // var conte = $(".contenitore").hasClass("nomeContatto");
         var contCorrente = $(".contenitore." + nomeContatto).addClass("active");
 
-        var chatta = contCorrente.find("#send");
+        $(".contenitore.active #valmsg").focus();
+
+        var chatta = (".active #send ");
         $(chatta).click(
             invio
         );
@@ -168,7 +188,7 @@ if (cerca === "") {
         $(".contenitore.active .immagine-small").css('background-image', 'url(' + nomeContatto+ '.png' + ')');
 
 
-        var tastoInvio = contCorrente.find("#valmsg");
+        var tastoInvio = $(".active #valmsg");
         $(tastoInvio).keypress(function(e){
             if(e.keyCode == 13)
             {
@@ -215,10 +235,11 @@ if (cerca === "") {
     //active al selettore non funziona
     $(".contenitore #valmsg").keypress(function(){
       // console.log("sta scrivendo");
-      var test = console.log("digito");
-      if (test = "digito") {
+      var test = console.log("digitati");
+      if (test = "digitati") {
         $(".staScrivendo").text("Stai scrivendo ...");
       }
+
     })
 
 
@@ -248,6 +269,7 @@ if (cerca === "") {
     )
 
 
+    $('#send').click(false);
 
 
 
