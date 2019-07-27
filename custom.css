@@ -22,7 +22,7 @@ body {
 }
 .container{
   width: 1200px;
-  margin: 2% auto;
+  margin: 5% auto;
   height: 80vh;
 }
 .container:after{
@@ -233,8 +233,14 @@ a{
 .mio-profilo i:hover , #barra-profilo i:hover , #barra i:hover{
   cursor: pointer;
 }
-
-
+.info .img-prof{
+    display: flex;
+    align-items: center;
+}
+#barra-profilo .info .fa-arrow-left{
+  margin-right: 15px;
+  display: none;
+}
 
 
 
@@ -263,9 +269,16 @@ a{
   justify-content: flex-start;
   width: 100%;
 }
- .msg-risp p{
+.texto.msg-risp{
+  position: relative;
+}
+ .msg-risp .testo-messaggio{
    background: rgb(194, 245, 181)
  }
+  .msg-risp .orario{
+    left: 9px;
+    bottom: -19px;
+  }
 
 .testo-messaggio , .msg-risp p {
   margin:0;
@@ -374,9 +387,7 @@ a{
 
 
 @media (max-width: 575.98px) {
-  body{
-      background: red;
-    }
+
     .dettagli-utente {
     margin-left: 14px;
     }
@@ -400,6 +411,7 @@ a{
   #barra-profilo .fa-search , #barra-profilo .fa-paperclip , .mio-profilo .fa-spinner , .mio-profilo  .fa-comment{
     display: none;
   }
+
   #barra-utenti {
     height: 70vh;
     width: 100%;
@@ -410,9 +422,7 @@ a{
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  body{
-      background: blue;
-    }
+
     .dettagli-utente {
     margin-left: 14px;
     }

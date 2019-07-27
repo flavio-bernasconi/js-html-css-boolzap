@@ -41,7 +41,7 @@
 
         <div id="lista-utenti" >
 
-          <a class="utente " href="#">
+          <a class="utente active" href="#">
             <img src="img.png" class="immagine"></img>
             <div class="dettagli-utente">
               <div class="ore">
@@ -164,7 +164,7 @@
       </div>
 
 
-      <div class="contenitore no-pad active">
+      <div class="contenitore no-pad ">
 
         <div id="messaggi">
           <div class="lista-messaggi">
@@ -173,10 +173,11 @@
 
       </div>
 
-      <div class="contenitore baffo " >
+      <div class="contenitore baffo active" >
         <div id="barra-profilo">
             <div class="info">
-                <div class="">
+                <div class="img-prof">
+                  <i class="fa fa-arrow-left" aria-hidden="true"></i>
                   <div class="immagine-small"> </div>
                 </div>
                 <div class="inserisci">
@@ -220,7 +221,8 @@
           <div class="contenitore foust " >
             <div id="barra-profilo">
                 <div class="info">
-                    <div class="">
+                    <div class="img-prof">
+                      <i class="fa fa-arrow-left" aria-hidden="true"></i>
                       <div class="immagine-small"> </div>
                     </div>
                     <div class="inserisci">
@@ -263,9 +265,9 @@
         <div class="contenitore teo " >
           <div id="barra-profilo">
               <div class="info">
-                  <div class="">
-                    <div class="immagine-small">
-                     </div>
+                  <div class="img-prof">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <div class="immagine-small"> </div>
                   </div>
                   <div class="inserisci">
                     <h3>teo</h3>
@@ -308,9 +310,10 @@
       <div class="contenitore turco " >
         <div id="barra-profilo">
             <div class="info">
-                <div class="">
-                  <div class="immagine-small"> </div>
-                </div>
+              <div class="img-prof">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <div class="immagine-small"> </div>
+              </div>
                 <div class="inserisci">
                   <h3>turco</h3>
                   <p>ultimo accesso <span></span></p>
@@ -352,7 +355,8 @@
     <div class="contenitore ame " >
       <div id="barra-profilo">
           <div class="info">
-              <div class="">
+              <div class="img-prof">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
                 <div class="immagine-small"> </div>
               </div>
               <div class="inserisci">
@@ -398,9 +402,10 @@
   <div class="contenitore comin " >
     <div id="barra-profilo">
         <div class="info">
-            <div class="">
-              <div class="immagine-small"> </div>
-            </div>
+          <div class="img-prof">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <div class="immagine-small"> </div>
+          </div>
             <div class="inserisci">
               <h3>comin</h3>
               <p>ultimo accesso <span></span></p>
@@ -441,14 +446,15 @@
 
 
 
-  <div class="contenitore vale " >
+  <div class="contenitore valeee " >
     <div id="barra-profilo">
         <div class="info">
-            <div class="">
-              <div class="immagine-small"> </div>
-            </div>
+          <div class="img-prof">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <div class="immagine-small"> </div>
+          </div>
             <div class="inserisci">
-              <h3>vale</h3>
+              <h3>valeee</h3>
               <p>ultimo accesso <span></span></p>
             </div>
         </div>
@@ -488,11 +494,12 @@
   <div class="contenitore bea " >
     <div id="barra-profilo">
         <div class="info">
-            <div class="">
-              <div class="immagine-small"> </div>
-            </div>
+          <div class="img-prof">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <div class="immagine-small"> </div>
+          </div>
             <div class="inserisci">
-              <h3>gigi</h3>
+              <h3>bea</h3>
               <p>ultimo accesso <span></span></p>
             </div>
         </div>
@@ -533,9 +540,10 @@
   <div class="contenitore gigi " >
     <div id="barra-profilo">
         <div class="info">
-            <div class="">
-              <div class="immagine-small"> </div>
-            </div>
+          <div class="img-prof">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <div class="immagine-small"> </div>
+          </div>
             <div class="inserisci">
               <h3>gigi</h3>
               <p>ultimo accesso <span></span></p>
@@ -608,6 +616,7 @@
     <script id="risptemplate" type="text/x-handlebars-template">
       <div class='texto {{classeAggiunta}}'>
           <p class="testo-messaggio">{{textMessaggio}}</p>
+          <p class="orario">{{time}}</p>
       </div>
     </script>
 

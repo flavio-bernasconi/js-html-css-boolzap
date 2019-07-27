@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-
+  $(".contenitore.active #valmsg").focus();
 
   var utenteCorrente = "";
   var classe = "";
@@ -75,7 +75,7 @@ $( document ).ready(function() {
 
       var template = Handlebars.compile(sorgenteCodice);
 
-      var daInserire = { textMessaggio: "oook",  classeAggiunta: "msg-risp"  };
+      var daInserire = { textMessaggio: "oook", time: tempo,  classeAggiunta: "msg-risp"  };
 
       var html = template(daInserire);
 
@@ -207,17 +207,22 @@ if (cerca === "") {
               // console.log("altezza div messaggi ",height);
               // $(".active .lista-messaggi").scrollTop(height);
 
-
-
-
-
-
             }
         });
       }
     )
 
-
+    var chatta = (".active #send ");
+    $(chatta).click(
+        invio
+    );
+    var tastoInvio = $(".active #valmsg");
+    $(tastoInvio).keypress(function(e){
+        if(e.keyCode == 13)
+        {
+          invio();
+        }
+    });
 
     //quando sono in hover al messaggio vedo i 3 puntini per poterlo cancellare
     $( "body" ).on( "click", '.active .msg-inviato .drop' , function() {
@@ -262,7 +267,7 @@ if (cerca === "") {
     })
 
 
-
+    //mostra punti per eliminare messaggio
     $( "body" ).on( "mouseenter", '.active .msg-inviato ' , function() {
         // $(".drop").removeClass("mostra");
         $(".drop").not(this).removeClass("mostra");
@@ -274,7 +279,7 @@ if (cerca === "") {
       $(".drop").removeClass("mostra");
     }
 
-    //se vado sul messaggio ok i puntini spariscono ;)
+    //per nascondere i puntini
     $( "body" ).on( "mouseenter", ' .msg-risp ' , function() {
         sparisci()
     })
@@ -287,38 +292,57 @@ if (cerca === "") {
       sparisci
     )
 
-
-
-
     $(window).on('resize', function(){
-      var win = $(this); //this = window
+      var win = $(this);
+      if (win.height() <= 780) {
+              location.reload();
+       }
+      if (win.width() >= 781) {
+          location.reload();
+       }
+    });
+
+
+
+      var win = $(this);
       if (win.width() <= 780) {
         $(".contenitore ").removeClass("active");
-        $("body").css("background","green");
+        $("body").css("background","rgb(186, 186, 186)");
         $("#barra-utenti").css("height","100vh");
         $("#lista-utenti").css("height","100%");
-        
+        $(".notifiche").hide();
+        $(".container").css("margin-top","0");
+
 
         $(".utente").click(
             function(){
               $("#lista-utenti").hide();
-              $("#barra-utenti").css("height","30vh");
+              $("#barra-utenti").hide();
+              $("#search").hide();
+              $(".contenitore.active ").css("height","100vh");
+              $(".contenitore.active ").show();
+              $(".fa-arrow-left ").show();
+              $(".contenitore.active #valmsg").focus();
+
             }
           )
 
 
-          $(".immagine-small").click(
+          $(".fa-arrow-left").click(
               function(){
                 $("#lista-utenti").show();
+                $("#barra-utenti").show();
+                $("#search").show();
                 $("#barra-utenti").css("height","100vh");
-                $(".contenitore ").toggleClass("active");
+                $(".contenitore ").remove("active");
+                $(".contenitore ").hide();
               }
             )
        }
        else {
          console.log("allargamento");
        }
-});
+
 
 
 });
